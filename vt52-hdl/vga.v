@@ -26,7 +26,9 @@ module vga (
 	input cursor_type,           // форма курсора, 0 - подчеркивание, 1 - блок
    input flash,                 // импульсы переключения видимости мерцающих символов
 	
-   input clk50mhz                // тактовый сигнал 50 Мгц
+   input clk50mhz,                // тактовый сигнал 50 Мгц
+
+   output vga_blank           
 );
 
 	// двухпортовый видеобуфер
@@ -126,6 +128,7 @@ module vga (
          vga_hsync <= 1'b1 ; 
          vga_vsync <= 1'b1 ; 
          vga_out <= 1'b0 ; 
+         //vga_blank <= 1'b1;
 			flashflag <= 2'b11;
       end
 		
@@ -251,7 +254,10 @@ module vga (
          else                vga_vsync <= 1'b1 ; 
          // оставшиеся 34 строки - гашение после синхроимпульса (back porch)  - обратный ход кадровой развертки
 			
-			
       end  
    end 
+
+   wire VisibleArea=((col>143&col<784)&(row<480))?1:0;
+   assign vga_blank = ~VisibleArea;
+
 endmodule
