@@ -1,11 +1,12 @@
-Versión para AtlasVGA (cyc1000) 
+Versión para Atlas (cyc1000) 
 
 ---------------
 Versión FPGA del terminal VT52 y 15IE00-013
 
 Este proyecto es una terminal de hardware completa que opera en el sistema de comando VT52
-y 15IE-00-013 (terminal Fryazino). La salida se produce en cualquier monitor VGA (se utiliza la resolución 640*480),
-se utiliza un teclado PS/2 normal para la entrada.
+y 15IE-00-013 (terminal Fryazino). La salida se produce en cualquier monitor VGA (se utiliza la resolución 640*480).
+
+Se utiliza un teclado PS/2 normal para la entrada.
 
 El terminal puede funcionar en codificación KOI7 H0/H1 (letras grandes-pequeñas rusas y latinas), así como en codificación KOI7 H2 (solo
 grandes letras rusas y latinas): los terminales CM7209 y VTA-2000-3 funcionaron en este modo.
@@ -20,6 +21,10 @@ Señales UART TTL a algún bus serie estándar (por ejemplo, RS232 o bucle de co
 en el que todo esto ya está instalado, entonces no tendrá que soldar nada en absoluto.
 
 Toda la documentación detallada del proyecto se encuentra en el archivo DOC/terminal.pdf. ¡Definitivamente recomiendo echarle un vistazo! 
+
+Teclas del core:
+
+![teclas](teclas.jpg)
 
 --------------------------------
 
